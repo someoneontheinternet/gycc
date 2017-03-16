@@ -6,7 +6,10 @@ var doc = $(".intro");
 
 var navPos = doc.offset().top - 60;
 
-view.on('scroll', function() {
+view.on('scroll', _.throttle(function() {
+
+  //console.log("scrolled");
+
   pos = view.scrollTop();
 
   if (pos > navPos) {
@@ -14,7 +17,7 @@ view.on('scroll', function() {
   } else {
     navbar.removeClass("black");
   }
-});
+}, 300, { leading: true }));
 
 $(document).ready(function() {
   // Loading Animation
@@ -65,9 +68,14 @@ resize();
 view.on("resize", resize);
 
 function resize() {
+
+   console.log("Resize: called");
+
    navPos = doc.offset().top - 60;
 
    if (view.innerWidth() > 995 && wrap == true) {
+
+     console.log("Resize: large screen.");
 
      var rows = conContainer.children();
 
@@ -88,6 +96,8 @@ function resize() {
    }
 
    if (view.innerWidth() < 995 && wrap == false) {
+
+     console.log("Resize: small screen.");
 
      cont.remove();
 
