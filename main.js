@@ -20,15 +20,16 @@ view.on('scroll', _.throttle(function() {
 }, 300, { leading: true }));
 
 $(document).ready(function() {
+
+});
+
+$(window).on("load", function() {
+  hideLoader();
   // Loading Animation
   setTimeout(function() {
     $(".preload").removeClass("preload");
   }, 400);
   // End Loading Animation
-});
-
-$(window).on("load", function() {
-
 });
 
 function hideLoader() {
