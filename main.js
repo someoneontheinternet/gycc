@@ -17,8 +17,10 @@ view.on('scroll', function() {
 });
 
 $(document).ready(function() {
-  hideLoader();
 
+});
+
+$(window).on("load", function() {
   // Loading Animation
   setTimeout(function() {
     $(".preload").removeClass("preload");
@@ -93,8 +95,6 @@ function resize() {
      conContainer.append('<div class="row"></div>');
 
      var newCont = $(".lan-container .row");
-
-     console.log(contents);
 
      for (var i = 0; i < contents.length; i++) {
        $(contents[i]).removeClass("col-md-3");
