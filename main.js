@@ -17,15 +17,15 @@ view.on('scroll', function() {
 });
 
 $(document).ready(function() {
-
-});
-
-$(window).on("load", function() {
   // Loading Animation
   setTimeout(function() {
     $(".preload").removeClass("preload");
   }, 400);
   // End Loading Animation
+});
+
+$(window).on("load", function() {
+
 });
 
 function hideLoader() {
